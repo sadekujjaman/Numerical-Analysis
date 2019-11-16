@@ -20,13 +20,12 @@ endfor
 m = A;
 x(n)= m(n, n+1)/m(n,n);
 for i=n-1:-1:1
-	acum = 0; 
+	sum = 0; 
 	for p = i+1:n
-		acum = acum + (m(i,p)*x(p));
+		sum = sum + (m(i,p)*x(p));
 	end
-	x(i)= (m(i, n + 1) - acum)/m(i, i);
+	x(i)= (m(i, n + 1) - sum)/m(i, i);
 end
 
 disp(x);
-L = eye(n);
-disp(L);
+
